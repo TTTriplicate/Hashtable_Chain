@@ -20,7 +20,7 @@ int main()
 			hashtable[i].tabbedPrint();
 		}
 		catch (std::invalid_argument e) {
-			std::cout << std::endl;
+			std::cout << e.what() << std::endl;
 		}
 	}
 

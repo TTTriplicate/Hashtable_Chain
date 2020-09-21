@@ -4,6 +4,8 @@
 
 int generateRandomNumber();
 
+void searchTable(LinkedList* hashtable);
+
 int main()
 {
 	srand(std::time(NULL));
@@ -24,8 +26,17 @@ int main()
 		}
 	}
 
-	int input = 0;
+	searchTable(hashtable);
 
+	return 0;
+}
+
+int generateRandomNumber() {
+	return rand() % 100;
+}
+
+void searchTable(LinkedList* hashtable) {
+	int input = 0;
 	while (input != -1) {
 		std::cout << "Enter a number between 1 and 100 to search for, or -1 to exit:" << std::endl;
 		std::cin >> input;
@@ -35,16 +46,11 @@ int main()
 		}
 		try {
 			Node* found = hashtable[input % 10].findByData(input);
-			std::cout <<"Found requested number in list " << input % 10 << " Node " << found->getKey() << std::endl;
+			std::cout << "Found requested number in list " << input % 10 << " Node " << found->getKey() << std::endl;
 		}
 		catch (std::invalid_argument e) {
 			std::cout << e.what() << std::endl;
 		}
 	}
 
-	return 0;
-}
-
-int generateRandomNumber() {
-	return rand() % 100;
 }

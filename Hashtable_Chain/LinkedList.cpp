@@ -93,20 +93,16 @@ void LinkedList::tabbedPrint() {
 Node* LinkedList::search(int key) {
 	//linearly searches for a given node by Key value
 	Node* currentNode = Head;
-	while (currentNode != nullptr) {//up to n iterations
-		/*following the setup, this makes one comparison(with one access)
-		per iteration, and continues through the items sequentially until
-		the correct item is found.  Worst-case, this runs n times; best case, 1;
-		on average, n/2.  This is still bounded by n.*/
-		if (currentNode->getKey() == key) {//2 operations
-			return currentNode;//1 operation
+	while (currentNode != nullptr) {
+		if (currentNode->getKey() == key) {
+			return currentNode;
 		}
 		else {
-			currentNode = currentNode->getNext();//2(n-1) operations
+			currentNode = currentNode->getNext();
 		}
 	}
 	throw std::invalid_argument("No item found with key " + std::to_string(key));
-}//totals 2n + 2(n - 1) + 2 operations
+}
 
 Node* LinkedList::findByData(int data) {
 	//linearly searches for a given node by Data value

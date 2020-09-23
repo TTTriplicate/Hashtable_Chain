@@ -1,3 +1,11 @@
+/*************************************
+Program: Hashtable_Chain.cpp
+Purpose: Hashtable for analysis
+Author: Chris Sousa
+Date: 09/21/2020
+*****************************************/
+
+
 #include <iostream>
 #include <ctime>
 #include "LinkedList.h"

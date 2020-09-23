@@ -1,6 +1,7 @@
 # Hashtable
 
-## Sorting
+## My Hashtable
+### Sorting
 
 The hashtable I created is really just an array of Linked Lists.  Given the parameters of the assignment, any integers inserted will go into the Linked List at the index equal to the last digit of the integer being added.  This takes the problem of insertion sort being not particularly efficient, and breaks it into 10 separate insertion sorts.  
 
@@ -49,9 +50,7 @@ The result is that in the absolute best case, there will be a completely even di
 
 Thus the sorting of this hashtable is better than a linked list, typically reaching $nlog_{10}(n)$ time complexity.
 
-## Searching
-
-### My Hashtable
+### Searching
 
 Searching is where hashtables are nearly always faster, even with a quick and dirty implementation with a high collision rate.  In order to find a number sorted into our hashtable, we need to determine which list it would fall into within the hashtable, and then find it in the list at that index.  Given an input to search for, this is as simple as:
 

@@ -80,6 +80,10 @@ This is still a linear search, which we have previously analyzed.  But the resul
 
 As with the sorting, the worst case is that all data was filtered into a single sublist of the hashtable, in which case we are simply running a linear search on a single linked list.  As previously discussed in Lab 1, this is of complexity $O(n)$.  However, the best case search time for the hashtable is when the data is evenly spread over all 10 sublists.  This gives us a linear search over a much smaller portion of the data, similar to breaking the data in half repeatedly for a binary search, resulting in a best case complexity of $\Omega(log_{10}(n))$.  The average case will still likely have the data broken across all 10 lists, but not perfectly.  Still, being broken into 10 pieces has the most dramatic effect, leaving us with an average time complexity of $\Theta(log_{10}(n))$.
 
+* $O(n)$
+* $\Omega(log_{10}(n))$
+* $\Theta(log_{10}(n))$
+
 In a table of no more than 10 items, this could be equivalent to $O(1)$ time complexity; but even with as few as 25, we have guaranteed collisions, and our average search time will be closer to 2 operations each.  And from the asymptotic view, will continue to grow, albeit quite slowly.
 
 ## An Optimized Hashtable
